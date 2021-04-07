@@ -2,7 +2,7 @@
 
 This example project demonstrates small, functional code snippets of specific [Beamable](https://beamable.com/) features and services. It is *not* a complete, sample project game.
 
-**Included** are examples only for Beamable Microservices. However, the [Beamable SDK Examples/](https://github.com/beamable/Beamable_SDK_Examples/) is available separately with many examples of other Beamable features and services.
+**Included** are examples only for Beamable Microservices. However, the [Beamable SDK Examples](https://github.com/beamable/Beamable_SDK_Examples) repo is available separately with many examples of other Beamable features and services.
 
 **Project Configuration**
 * `Unity Target` - Standalone MAC/PC

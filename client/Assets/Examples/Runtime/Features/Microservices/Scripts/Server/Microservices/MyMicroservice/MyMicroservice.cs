@@ -1,4 +1,6 @@
-namespace Beamable.Server.MyMicroservice
+using Beamable.Server;
+
+namespace Beamable.Examples.Features.Microservices
 {
    [Microservice("MyMicroservice")]
    public class MyMicroservice : Microservice
@@ -6,7 +8,7 @@ namespace Beamable.Server.MyMicroservice
       [ClientCallable]
       public int AddMyValues(int a, int b)
       {
-         return a + b * 2;
+         return a + b;
       }
    }
 }

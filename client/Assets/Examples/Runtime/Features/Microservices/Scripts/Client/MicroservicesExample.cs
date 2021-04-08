@@ -31,15 +31,10 @@ namespace Beamable.Examples.Features.Microservices
             
             _myMicroserviceClient = new MyMicroserviceClient();
             
-            // AddMyValues(): 10 + 5
-            await _myMicroserviceClient.AddMyValues(10, 5)
-                .Then(MyMicroserviceClient_OnServerCallCompleted);
-        }
-
-        //  Event Handlers  -------------------------------
-        private void MyMicroserviceClient_OnServerCallCompleted(int result)
-        {
-            // Result:15
+            // #1 - Call Microservice with (10, 5)
+            var result = await _myMicroserviceClient.AddMyValues(10, 5);
+                
+            // #2 - "Result:15"
             Debug.Log ($"Result:{result}");
         }
     }

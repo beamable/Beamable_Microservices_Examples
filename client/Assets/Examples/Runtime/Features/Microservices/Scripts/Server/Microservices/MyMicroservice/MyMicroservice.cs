@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Beamable.Server;
 
 namespace Beamable.Examples.Features.Microservices
@@ -6,9 +7,12 @@ namespace Beamable.Examples.Features.Microservices
    public class MyMicroservice : Microservice
    {
       [ClientCallable]
-      public int AddMyValues(int a, int b)
+      public bool AddMyValues(int a, int b)
       {
-         return a + b;
+         Services.Inventory.AddCurrencies(
+            new Dictionary<string, long> {{"currencies.gold", 100}});
+
+         return true;
       }
    }
 }

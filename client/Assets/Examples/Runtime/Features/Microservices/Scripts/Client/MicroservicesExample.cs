@@ -17,7 +17,13 @@ namespace Beamable.Examples.Features.Microservices
 
         protected void Start()
         {
-            Debug.Log("Start()");
+            Debug.Log("Start() Instructions...\n" + 
+            "* Complete docker setup per https://docs.beamable.com/docs/microservices-feature\n" +
+            "* Start the server per https://docs.beamable.com/docs/microservices-feature\n" +
+            "* Play This Scene\n" + 
+            "* Enjoy!\n\n\n");
+            
+            
 
             SetupBeamable();
         }
@@ -32,7 +38,7 @@ namespace Beamable.Examples.Features.Microservices
             _myMicroserviceClient = new MyMicroserviceClient();
             
             // #1 - Call Microservice with (10, 5)
-            var result = await _myMicroserviceClient.AddMyValues(10, 5);
+            bool result = await _myMicroserviceClient.AddMyValues(10, 5);
                 
             // #2 - "Result:15"
             Debug.Log ($"Result:{result}");

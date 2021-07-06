@@ -38,7 +38,7 @@ namespace Beamable.Examples.Features.Microservices
             _myMicroserviceClient = new MyMicroserviceClient();
             
             // #1 - Call Microservice with (10, 5)
-            bool result = await _myMicroserviceClient.AddMyValues(10, 5);
+            int result = await _myMicroserviceClient.AddMyValues(10, 5);
                 
             // #2 - "Result:15"
             Debug.Log ($"Result:{result}");

@@ -16,21 +16,21 @@ namespace Beamable.Server.Clients
     
     
     /// <summary> A generated client for <see cref="Beamable.Examples.Features.Microservices.MyMicroservice"/> </summary
-    public sealed class MyMicroserviceClient : Beamable.Server.MicroserviceClient
+    public sealed class DeploymentTestClient : Beamable.Server.MicroserviceClient
     {
         
         /// <summary>
-        /// Call the AddMyValues method on the MyMicroservice microservice
+        /// Call the AddMyValues method on the DeploymentTest microservice
         /// <see cref="Beamable.Examples.Features.Microservices.MyMicroservice.AddMyValues"/>
         /// </summary>
-        public Beamable.Common.Promise<int> AddMyValues(int a, int b)
+        public Beamable.Common.Promise<bool> AddMyValues(int a, int b)
         {
             string serialized_a = this.SerializeArgument<int>(a);
             string serialized_b = this.SerializeArgument<int>(b);
             string[] serializedFields = new string[] {
                     serialized_a,
                     serialized_b};
-            return this.Request<int>("MyMicroservice", "AddMyValues", serializedFields);
+            return this.Request<bool>("DeploymentTest", "AddMyValues", serializedFields);
         }
     }
 }

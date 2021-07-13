@@ -37,11 +37,17 @@ namespace Beamable.Examples.Features.Microservices
             
             _myMicroserviceClient = new MyMicroserviceClient();
             
-            // #1 - Call Microservice with (10, 5)
-            int result = await _myMicroserviceClient.AddMyValues(10, 5);
+            // #1a - Call Microservice with (10, 5)
+            int myValues = await _myMicroserviceClient.AddMyValues(10, 5);
                 
-            // #2 - "Result:15"
-            Debug.Log ($"Result:{result}");
+            // #1b - Result:15
+            Debug.Log ($"AddMyValues() Result = {myValues}");
+            
+            // #2a - Call Microservice
+            int playerLevel = await _myMicroserviceClient.GetPlayerLevel();
+                
+            // #3b - Result:1
+            Debug.Log ($"GetPlayerLevel() Result = {playerLevel}");
         }
     }
 }

@@ -32,5 +32,27 @@ namespace Beamable.Server.Clients
                     serialized_b};
             return this.Request<int>("MyMicroservice", "AddMyValues", serializedFields);
         }
+        
+        /// <summary>
+        /// Call the GetPlayerLevel method on the MyMicroservice microservice
+        /// <see cref="Beamable.Examples.Features.Microservices.MyMicroservice.GetPlayerLevel"/>
+        /// </summary>
+        public Beamable.Common.Promise<int> GetPlayerLevel()
+        {
+            string[] serializedFields = new string[0];
+            return this.Request<int>("MyMicroservice", "GetPlayerLevel", serializedFields);
+        }
+        
+        /// <summary>
+        /// Call the SetPlayerLevel method on the MyMicroservice microservice
+        /// <see cref="Beamable.Examples.Features.Microservices.MyMicroservice.SetPlayerLevel"/>
+        /// </summary>
+        public Beamable.Common.Promise<bool> SetPlayerLevel(int playerLevel)
+        {
+            string serialized_playerLevel = this.SerializeArgument<int>(playerLevel);
+            string[] serializedFields = new string[] {
+                    serialized_playerLevel};
+            return this.Request<bool>("MyMicroservice", "SetPlayerLevel", serializedFields);
+        }
     }
 }

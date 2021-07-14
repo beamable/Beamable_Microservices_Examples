@@ -1,5 +1,5 @@
 {
-    "name": "Unity.Beamable.Runtime.UserMicroService.mymathmicroservice",
+    "name": "Unity.Beamable.Runtime.UserMicroService.mymicroservice",
     "references": [
         "Unity.Beamable.Runtime.Common",
         "Unity.Beamable.Server.Runtime",

@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 505229841}
   - component: {fileID: 505229842}
   m_Layer: 0
-  m_Name: MyMathMicroserviceExample
+  m_Name: MicroservicesExample
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

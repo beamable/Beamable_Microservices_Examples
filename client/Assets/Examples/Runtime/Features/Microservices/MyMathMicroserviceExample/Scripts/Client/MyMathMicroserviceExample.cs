@@ -4,14 +4,19 @@ using Beamable.Server.Clients;
 namespace Beamable.Examples.Features.Microservices
 {
     /// <summary>
-    /// Demonstrates <see cref="Microservices"/>.
+    /// Demonstrates <see cref="Microservices"/> including
+    /// a method with [ClientCallable].
+    ///
+    /// NOTE: This is a beginner example and a good place
+    /// to start learning.
+    /// 
     /// </summary>
-    public class MicroservicesExample : MonoBehaviour
+    public class MyMathMicroserviceExample : MonoBehaviour
     {
         //  Properties  -----------------------------------
         
         //  Fields  ---------------------------------------
-        private MyMicroserviceClient  _myMicroserviceClient;
+        private MyMathMicroserviceClient  _myMathMicroserviceClient;
         
         //  Unity Methods  --------------------------------
 
@@ -22,8 +27,6 @@ namespace Beamable.Examples.Features.Microservices
             "* Start the server per https://docs.beamable.com/docs/microservices-feature\n" +
             "* Play This Scene\n" + 
             "* Enjoy!\n\n\n");
-            
-            
 
             SetupBeamable();
         }
@@ -35,19 +38,13 @@ namespace Beamable.Examples.Features.Microservices
 
             Debug.Log($"beamableAPI.User.id = {beamableAPI.User.id}");
             
-            _myMicroserviceClient = new MyMicroserviceClient();
+            _myMathMicroserviceClient = new MyMathMicroserviceClient();
             
-            // #1a - Call Microservice with (10, 5)
-            int myValues = await _myMicroserviceClient.AddMyValues(10, 5);
+            // #1 - Call Microservice with (10, 5)
+            int myValues = await _myMathMicroserviceClient.AddMyValues(10, 5);
                 
-            // #1b - Result:15
+            // #2 - Result = 15
             Debug.Log ($"AddMyValues() Result = {myValues}");
-            
-            // #2a - Call Microservice
-            int playerLevel = await _myMicroserviceClient.GetPlayerLevel();
-                
-            // #3b - Result:1
-            Debug.Log ($"GetPlayerLevel() Result = {playerLevel}");
         }
     }
 }

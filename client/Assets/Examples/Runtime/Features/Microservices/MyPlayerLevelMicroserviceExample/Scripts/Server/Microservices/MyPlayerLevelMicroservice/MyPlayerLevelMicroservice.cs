@@ -1,27 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Beamable.Server;
 
-namespace Beamable.Examples.Features.Microservices
+namespace Beamable.Server.MyPlayerLevelMicroservice
 {
-   [Microservice("MyMicroservice")]
-   public class MyMicroservice : Microservice
+   [Microservice("MyPlayerLevelMicroservice")]
+   public class MyPlayerLevelMicroservice : Microservice
    {
       private const string PlayerLevelKey = "PLAYER_LEVEL";
       private const int PlayerLevelDefaultValue = 1;
       
-      /// <summary>
-      /// Add 2 integers and return the result.
-      /// </summary>
-      /// <param name="a">The first value to add</param>
-      /// <param name="b">The second value to add</param>
-      /// <returns>Returns the sum of the values</returns>
-      [ClientCallable]
-      public int AddMyValues(int a, int b)
-      {
-         return a + b; 
-      }
       
       /// <summary>
       /// Get the current user's progression level

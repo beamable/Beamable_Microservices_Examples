@@ -1,5 +1,5 @@
 {
-    "name": "Unity.Beamable.Runtime.UserMicroService.myplayermicroservice",
+    "name": "Unity.Beamable.Runtime.UserMicroService.myadbmicroservice",
     "rootNamespace": "",
     "references": [
         "Unity.Beamable.Runtime.Common",

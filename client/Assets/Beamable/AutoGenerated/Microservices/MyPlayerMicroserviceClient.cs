@@ -15,13 +15,13 @@ namespace Beamable.Server.Clients
     using Beamable.Server;
     
     
-    /// <summary> A generated client for <see cref="Beamable.Examples.Features.Microservices.MyPlayerMicroservice"/> </summary
+    /// <summary> A generated client for <see cref="Beamable.Examples.Features.Microservices.MyPlayerMicroserviceExample.MyPlayerMicroservice"/> </summary
     public sealed class MyPlayerMicroserviceClient : Beamable.Server.MicroserviceClient
     {
         
         /// <summary>
         /// Call the GetPlayerLevel method on the MyPlayerMicroservice microservice
-        /// <see cref="Beamable.Examples.Features.Microservices.MyPlayerMicroservice.GetPlayerLevel"/>
+        /// <see cref="Beamable.Examples.Features.Microservices.MyPlayerMicroserviceExample.MyPlayerMicroservice.GetPlayerLevel"/>
         /// </summary>
         public Beamable.Common.Promise<int> GetPlayerLevel()
         {
@@ -31,7 +31,7 @@ namespace Beamable.Server.Clients
         
         /// <summary>
         /// Call the SetPlayerLevel method on the MyPlayerMicroservice microservice
-        /// <see cref="Beamable.Examples.Features.Microservices.MyPlayerMicroservice.SetPlayerLevel"/>
+        /// <see cref="Beamable.Examples.Features.Microservices.MyPlayerMicroserviceExample.MyPlayerMicroservice.SetPlayerLevel"/>
         /// </summary>
         public Beamable.Common.Promise<bool> SetPlayerLevel(int playerLevel)
         {

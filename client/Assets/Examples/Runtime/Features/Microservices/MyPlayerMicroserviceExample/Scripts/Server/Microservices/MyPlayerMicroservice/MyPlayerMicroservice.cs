@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Beamable.Server;
 
-namespace Beamable.Examples.Features.Microservices
+namespace Beamable.Examples.Features.Microservices.MyPlayerMicroserviceExample
 {
    [Microservice("MyPlayerMicroservice")]
    public class MyPlayerMicroservice : Microservice
@@ -22,6 +22,7 @@ namespace Beamable.Examples.Features.Microservices
          string access = "public";
          string domain = "client";
          string type = "player";
+         
          Dictionary<string, string> getStats = await Services.Stats.GetStats(domain, access, type, dbid);
 
          // Return value, if it was present
@@ -43,13 +44,13 @@ namespace Beamable.Examples.Features.Microservices
       [AdminOnlyCallable]
       public async Task<bool> SetPlayerLevel(int playerLevel)
       {
+         // Validate parameters, if needed
          if (playerLevel < 0)
          {
             return false;
          }
          
          string access = "public";
-         string type = "player";
          Dictionary<string, string> setStats = 
             new Dictionary<string, string>() { { PlayerLevelKey, playerLevel.ToString() } };
 

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Beamable.Server.Clients;
 
-namespace Beamable.Examples.Features.Microservices.MyPlayerMicroserviceExample
+namespace Beamable.Examples.Features.Microservices.MyMathMicroserviceExample
 {
     /// <summary>
     /// Demonstrates <see cref="Microservices"/>.
@@ -40,7 +40,6 @@ namespace Beamable.Examples.Features.Microservices.MyPlayerMicroserviceExample
                 
             // #2 - Result = 15
             Debug.Log ($"AddMyValues() Result = {myValues}");
-            
         }
     }
 }

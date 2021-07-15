@@ -15,13 +15,13 @@ namespace Beamable.Server.Clients
     using Beamable.Server;
     
     
-    /// <summary> A generated client for <see cref="Beamable.Examples.Features.Microservices.MyMathMicroservice"/> </summary
+    /// <summary> A generated client for <see cref="Beamable.Examples.Features.Microservices.MyMathMicroserviceExample.MyMathMicroservice"/> </summary
     public sealed class MyMathMicroserviceClient : Beamable.Server.MicroserviceClient
     {
         
         /// <summary>
         /// Call the AddMyValues method on the MyMathMicroservice microservice
-        /// <see cref="Beamable.Examples.Features.Microservices.MyMathMicroservice.AddMyValues"/>
+        /// <see cref="Beamable.Examples.Features.Microservices.MyMathMicroserviceExample.MyMathMicroservice.AddMyValues"/>
         /// </summary>
         public Beamable.Common.Promise<int> AddMyValues(int a, int b)
         {

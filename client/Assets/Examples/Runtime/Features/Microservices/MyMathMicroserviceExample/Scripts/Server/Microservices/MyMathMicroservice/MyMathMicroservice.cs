@@ -1,6 +1,6 @@
 using Beamable.Server;
 
-namespace Beamable.Examples.Features.Microservices
+namespace Beamable.Examples.Features.Microservices.MyMathMicroserviceExample
 {
    [Microservice("MyMathMicroservice")]
    public class MyMathMicroservice : Microservice

@@ -20,13 +20,13 @@ namespace Beamable.Server.Clients
     {
         
         /// <summary>
-        /// Call the GetPlayerLevel method on the MyADBMicroservice microservice
-        /// <see cref="Beamable.Server.MyADBMicroservice.MyADBMicroserviceExample.MyADBMicroservice.GetPlayerLevel"/>
+        /// Call the ConnectToDB method on the MyADBMicroservice microservice
+        /// <see cref="Beamable.Server.MyADBMicroservice.MyADBMicroserviceExample.MyADBMicroservice.ConnectToDB"/>
         /// </summary>
-        public Beamable.Common.Promise<int> GetPlayerLevel()
+        public Beamable.Common.Promise<int> ConnectToDB()
         {
             string[] serializedFields = new string[0];
-            return this.Request<int>("MyADBMicroservice", "GetPlayerLevel", serializedFields);
+            return this.Request<int>("MyADBMicroservice", "ConnectToDB", serializedFields);
         }
     }
 }

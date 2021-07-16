@@ -1,106 +1,58 @@
+using System;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
-using Amazon.DynamoDBv2.DataModel;
+using Amazon.Runtime;
+using UnityEngine;
 
 namespace Beamable.Server.MyADBMicroservice.MyADBMicroserviceExample
 {
    [Microservice("MyADBMicroservice")]
    public class MyADBMicroservice : Microservice
    {
-      [ClientCallable]
-      public async Task<int> GetPlayerLevel()
-      {
-         AmazonDynamoDBConfig ddbConfig = new AmazonDynamoDBConfig();
-         AmazonDynamoDBClient client = new AmazonDynamoDBClient(ddbConfig);
-         DynamoDBContext context = new DynamoDBContext(client);
 
+      [ClientCallable]
+      public async Task<int> ConnectToDB()
+      {
+         Debug.Log($"ConnectToDB()");
+         
+         // I created this from amazon.com. Works?
+         // CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
+         //    getApplicationContext(),
+         //    "us-east-2:c111bb57-5e02-482d-b179-60d18f0ea259", // Identity pool ID
+         //    Regions.US_EAST_2 // Region
+         // );
+         
+         // I created this from
+         // (https://console.aws.amazon.com/iam/home#/security_credentials$access_key). Works?
+            
+         //Access Key:
+         //       AKIAQJGZKKP3ZBMH6WA5
+         //Secret Key:
+         //       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
+         
+         try
+         {
+            Debug.Log($"1");
+            
+            var c = new BasicAWSCredentials(
+               "AKIAQJGZKKP3ZBMH6WA5",
+               "gmbd4KZRs6TKAGgS+KxMRmyKB6xY/I2+vvE8AGGd");
+            
+            Debug.Log($"2");
+            
+            // THROWS EXCEPTION: The type initializer for 'Amazon.AWSConfigs' threw an exception.
+            var x = new AmazonDynamoDBStreamsClient(c);
+            
+            Debug.Log($"3");
+            
+         }
+         catch (Exception e)
+         {
+            Debug.Log($"GetPlayerLevel() Message = {e.Message}");
+            return -1;
+         }
+         
          return 1;
       }
    }
 }
-//
-// using System;
-// using System.Net;
-// using System.Net.NetworkInformation;
-// using Amazon.DynamoDBv2;
-//
-// namespace DynamoDB_intro
-// {
-//     public static partial class DdbIntro
-//     {
-//         /*-----------------------------------------------------------------------------------
-//           *  If you are creating a client for the Amazon DynamoDB service, make sure your credentials
-//           *  are set up first, as explained in:
-//           *  https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SettingUp.DynamoWebService.html,
-//           *
-//           *  If you are creating a client for DynamoDBLocal (for testing purposes),
-//           *  DynamoDB-Local should be started first. For most simple testing, you can keep
-//           *  data in memory only, without writing anything to disk.  To do this, use the
-//           *  following command line:
-//           *
-//           *    java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -inMemory
-//           *
-//           *  For information about DynamoDBLocal, see:
-//           *  https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html.
-//           *-----------------------------------------------------------------------------------*/
-//         // So we know whether local DynamoDB is running
-//         private static readonly string Ip = "localhost";
-//         private static readonly int Port = 8000;
-//         private static readonly string EndpointUrl = "http://" + Ip + ":" + Port;
-//         private static bool IsPortInUse()
-//         {
-//             bool isAvailable = true;
-//             // Evaluate current system TCP connections. This is the same information provided
-//             // by the netstat command line application, just in .Net strongly-typed object
-//             // form.  We will look through the list, and if our port we would like to use
-//             // in our TcpClient is occupied, we will set isAvailable to false.
-//             IPGlobalProperties ipGlobalProperties = IPGlobalProperties.GetIPGlobalProperties();
-//             IPEndPoint[] tcpConnInfoArray = ipGlobalProperties.GetActiveTcpListeners();
-//             foreach (IPEndPoint endpoint in tcpConnInfoArray)
-//             {
-//                 if (endpoint.Port == Port)
-//                 {
-//                     isAvailable = false;
-//                     break;
-//                 }
-//             }
-//
-//             return isAvailable;
-//         }
-//
-//         public static bool createClient(bool useDynamoDbLocal)
-//         {
-//             if (useDynamoDbLocal)
-//             {
-//                 // First, check to see whether anyone is listening on the DynamoDB local port
-//                 // (by default, this is port 8000, so if you are using a different port, modify this accordingly)
-//                 var portUsed = IsPortInUse();
-//                 if (portUsed)
-//                 {
-//                     Console.WriteLine("The local version of DynamoDB is NOT running.");
-//                     return (false);
-//                 }
-//
-//                 // DynamoDB-Local is running, so create a client
-//                 Console.WriteLine("  -- Setting up a DynamoDB-Local client (DynamoDB Local seems to be running)");
-//                 AmazonDynamoDBConfig ddbConfig = new AmazonDynamoDBConfig();
-//                 ddbConfig.ServiceURL = EndpointUrl;
-//                 try
-//                 {
-//                     Client = new AmazonDynamoDBClient(ddbConfig);
-//                 }
-//                 catch (Exception ex)
-//                 {
-//                     Console.WriteLine("     FAILED to create a DynamoDBLocal client; " + ex.Message);
-//                     return false;
-//                 }
-//             }
-//             else
-//             {
-//                 Client = new AmazonDynamoDBClient();
-//             }
-//
-//             return true;
-//         }
-//     }
-// }

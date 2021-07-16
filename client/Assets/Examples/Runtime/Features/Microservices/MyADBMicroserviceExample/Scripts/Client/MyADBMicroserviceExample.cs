@@ -36,10 +36,10 @@ namespace Beamable.Examples.Features.Microservices.MyADBMicroserviceExample
             _myAdbMicroserviceClient = new MyADBMicroserviceClient();
             
             // #1 - Call Microservice
-            //int playerLevel = await _myAdbMicroserviceClient.GetPlayerLevel();
+            int playerLevel = await _myAdbMicroserviceClient.ConnectToDB();
                 
             // #2 - Result = 1
-           // Debug.Log ($"GetPlayerLevel() Result = {playerLevel}");
+            Debug.Log ($"GetPlayerLevel() Result = {playerLevel}");
         }
     }
 }

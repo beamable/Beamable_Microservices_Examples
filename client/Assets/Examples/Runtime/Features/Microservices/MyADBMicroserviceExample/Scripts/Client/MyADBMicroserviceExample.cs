@@ -36,7 +36,7 @@ namespace Beamable.Examples.Features.Microservices.MyADBMicroserviceExample
             _myAdbMicroserviceClient = new MyADBMicroserviceClient();
             
             // #1 - Call Microservice
-            bool isSuccess = await _myAdbMicroserviceClient.CallADB();
+            bool isSuccess = await _myAdbMicroserviceClient.ConnectToDatabase();
                 
             // #2 - IsSuccess = true
             Debug.Log ($"GetPlayerLevel() IsSuccess = {isSuccess}");

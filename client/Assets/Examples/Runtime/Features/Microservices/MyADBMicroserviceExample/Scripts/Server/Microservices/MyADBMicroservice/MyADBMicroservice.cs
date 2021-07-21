@@ -1,6 +1,8 @@
 using System;
 using System.Threading.Tasks;
+using Amazon;
 using Amazon.DynamoDBv2;
+using Amazon.Runtime;
 using UnityEngine;
 
 namespace Beamable.Server.MyADBMicroservice.MyADBMicroserviceExample
@@ -9,13 +11,28 @@ namespace Beamable.Server.MyADBMicroservice.MyADBMicroserviceExample
    public class MyADBMicroservice : Microservice
    {
       [ClientCallable]
-      public async Task<bool> CallADB()
+      public async Task<bool> ConnectToDatabase()
       {
+         // TODO: Create an account with https://aws.amazon.com/dynamodb/ 
+         // TODO: And add your keys here
+         string accessKey = "replace-with-your-access-key";
+         string secretKey = "replace-with-your-secret-key";
+         
          try
          {
-            // TODO: Create your own account with https://aws.amazon.com/dynamodb/ 
-            // And add your credentials here
-            AmazonDynamoDBConfig amazonDynamoDBConfig = new AmazonDynamoDBConfig();
+            // Credentials
+            var credentials = new BasicAWSCredentials(accessKey, secretKey);
+            
+            // Configuration
+            var config = new AmazonDynamoDBConfig()
+            {
+               RegionEndpoint = RegionEndpoint.USWest2
+            };
+            
+            // Client
+            AmazonDynamoDBClient client = 
+               new AmazonDynamoDBClient(credentials, config);
+            
             Debug.Log($"CallADB() Success!");
             
          }

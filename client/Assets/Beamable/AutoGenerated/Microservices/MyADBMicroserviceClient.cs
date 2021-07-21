@@ -20,13 +20,13 @@ namespace Beamable.Server.Clients
     {
         
         /// <summary>
-        /// Call the CallADB method on the MyADBMicroservice microservice
-        /// <see cref="Beamable.Server.MyADBMicroservice.MyADBMicroserviceExample.MyADBMicroservice.CallADB"/>
+        /// Call the ConnectToDatabase method on the MyADBMicroservice microservice
+        /// <see cref="Beamable.Server.MyADBMicroservice.MyADBMicroserviceExample.MyADBMicroservice.ConnectToDatabase"/>
         /// </summary>
-        public Beamable.Common.Promise<bool> CallADB()
+        public Beamable.Common.Promise<bool> ConnectToDatabase()
         {
             string[] serializedFields = new string[0];
-            return this.Request<bool>("MyADBMicroservice", "CallADB", serializedFields);
+            return this.Request<bool>("MyADBMicroservice", "ConnectToDatabase", serializedFields);
         }
     }
 }

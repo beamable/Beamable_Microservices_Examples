@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.beamable": {
-      "version": "0.11.0",
+      "version": "0.13.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -22,11 +22,11 @@
       "hash": "ebc33c7a81c0b66ad508599fa07694e2e7704189"
     },
     "com.beamable.server": {
-      "version": "0.11.0",
+      "version": "0.13.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.beamable": "0.11.0"
+        "com.beamable": "0.13.0"
       },
       "url": "https://nexus.beamable.com/nexus/content/repositories/unity"
     },

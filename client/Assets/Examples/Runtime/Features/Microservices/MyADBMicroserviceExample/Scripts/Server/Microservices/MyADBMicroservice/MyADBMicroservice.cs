@@ -11,7 +11,7 @@ namespace Beamable.Server.MyADBMicroservice.MyADBMicroserviceExample
    public class MyADBMicroservice : Microservice
    {
       [ClientCallable]
-      public async Task<bool> ConnectToDatabase()
+      public bool ConnectToDatabase()
       {
          // TODO: Create an account with https://aws.amazon.com/dynamodb/ 
          // TODO: And add your keys here

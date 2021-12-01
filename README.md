@@ -3,8 +3,8 @@
 ### Variations Of Examples
 
 There are two projects related to Microservices.
-* [Beamable_Microservices_Examples](https://github.com/beamable/Beamable_Microservices_Examples) - This is a great place to start.
-* [Beamable_Microservices_3rd_Party_Examples](https://github.com/beamable/Beamable_Microservices_3rd_Party_Examples/) - This contains examples which pull in 3rd-Party Microservices.
+* [Beamable_Microservices_Examples](https://github.com/beamable/Beamable_Microservices_Examples) - This is a great place to start
+* [Beamable_Microservices_3rd_Party_Examples](https://github.com/beamable/Beamable_Microservices_3rd_Party_Examples/) - This contains examples which pull in 3rd-Party Microservices
 
 ----
 

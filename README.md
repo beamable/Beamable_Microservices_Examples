@@ -1,5 +1,13 @@
 # Overview: Beamable Microservices Examples
 
+### Variations Of Examples
+
+There are two projects related to Microservices.
+* [Beamable_Microservices_Examples](https://github.com/beamable/Beamable_Microservices_Examples) - This is a great place to start.
+* [Beamable_Microservices_3rd_Party_Examples](https://github.com/beamable/Beamable_Microservices_3rd_Party_Examples/) - This contains examples which pull in 3rd-Party Microservices.
+
+----
+
 This example project demonstrates small, functional code snippets of specific [Beamable](https://beamable.com/) features and services. It is *not* a complete, sample project game.
 
 **Included** are examples only for Beamable Microservices. However, the [Beamable SDK Examples](https://github.com/beamable/Beamable_SDK_Examples) repo is available separately with many examples of other Beamable features and services.

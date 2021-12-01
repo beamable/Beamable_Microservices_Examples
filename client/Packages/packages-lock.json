@@ -11,16 +11,6 @@
       },
       "url": "https://nexus.beamable.com/nexus/content/repositories/unity"
     },
-    "com.beamable.microservices.timedrewards": {
-      "version": "https://github.com/beamable/Microservices-TimedRewards.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.beamable": "0.11.0",
-        "com.beamable.server": "0.11.0"
-      },
-      "hash": "ebc33c7a81c0b66ad508599fa07694e2e7704189"
-    },
     "com.beamable.server": {
       "version": "0.17.4",
       "depth": 0,

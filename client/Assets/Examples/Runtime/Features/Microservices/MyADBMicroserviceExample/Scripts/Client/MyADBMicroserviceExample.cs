@@ -39,7 +39,7 @@ namespace Beamable.Examples.Features.Microservices.MyADBMicroserviceExample
             bool isSuccess = await _myAdbMicroserviceClient.ConnectToDatabase();
                 
             // #2 - IsSuccess = true
-            Debug.Log ($"GetPlayerLevel() IsSuccess = {isSuccess}");
+            Debug.Log ($"ConnectToDatabase() IsSuccess = {isSuccess}");
         }
     }
 }

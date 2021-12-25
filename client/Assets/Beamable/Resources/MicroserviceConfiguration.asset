@@ -49,6 +49,15 @@ MonoBehaviour:
       Username: root
       Password: Password!
       SshPort: 11103
+  - ServiceName: MyCurrencyMicroservice
+    Enabled: 1
+    TemplateId: small
+    CustomDockerFileStrings: 
+    IncludeDebugTools: 0
+    DebugData:
+      Username: root
+      Password: Password!
+      SshPort: 11104
   StorageObjects:
   - StorageName: NewStorageObject
     StorageType: mongov1
@@ -62,7 +71,7 @@ MonoBehaviour:
   AutoReferenceContent: 1
   ColorLogs: 0
   EnableDockerBuildkit: 0
-  EnableStoragePreview: 1
+  EnableStoragePreview: 0
   DockerCommand: docker
   ForwardContainerLogsToUnityConsole: 0
   LogProcessLabelColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

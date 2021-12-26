@@ -36,25 +36,26 @@ namespace Beamable.Examples.Features.Microservices.MyCurrencyMicroserviceExample
             
             _myCurrencyMicroserviceClient = new MyCurrencyMicroserviceClient();
             
-            // #1 - Call Microservice
-            var activeCurrencyBefore = await _myCurrencyMicroserviceClient.GetActiveCurrency();
-            Debug.Log("found1: " + activeCurrencyBefore.Key);
+            // Test
+            var activeCurrencyBefore = await _myCurrencyMicroserviceClient.GetActiveCurrencyValue();
 
             // #1 - Call Microservice
             bool isSuccess1 = await _myCurrencyMicroserviceClient.AddToActiveCurrency();
             Debug.Log ($"AddToActiveCurrency() isSuccess = {isSuccess1}");
             
-            var activeCurrencyDuring = await _myCurrencyMicroserviceClient.GetActiveCurrency();
-            Debug.Log("found2: " + activeCurrencyDuring.Key);
+            // Test
+            var activeCurrencyDuring = await _myCurrencyMicroserviceClient.GetActiveCurrencyValue();
 
             // #2 - Call Microservice
             bool isSuccess2 = await _myCurrencyMicroserviceClient.RemoveFromActiveCurrency();
             Debug.Log ($"RemoveFromActiveCurrency() isSuccess = {isSuccess2}");
             
-            var activeCurrencyAfter = await _myCurrencyMicroserviceClient.GetActiveCurrency();
-            Debug.Log ($"GetActiveCurrency() activeCurrencyBefore.Value = {activeCurrencyBefore.Value}");
-            Debug.Log ($"GetActiveCurrency() activeCurrencyDuring.Value = {activeCurrencyDuring.Value}");
-            Debug.Log ($"GetActiveCurrency() activeCurrencyAfter.Value = {activeCurrencyAfter.Key}");
+            // Test
+            var activeCurrencyAfter = await _myCurrencyMicroserviceClient.GetActiveCurrencyValue();
+            Debug.Log ($"GetActiveCurrency() " +
+                       $"before = {activeCurrencyBefore}, " +
+                       $"during = {activeCurrencyDuring}, " +
+                       $"after = {activeCurrencyAfter}.");
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Beamable.Server
       /// as the active currency
       /// </summary>
       [ClientCallable]
-      public async Task<KeyValuePair<string, long>> GetActiveCurrency()
+      public async Task<string> GetActiveCurrencyId()
       {
          var inventoryView = await Services.Inventory.GetCurrent();
          
@@ -22,12 +22,30 @@ namespace Beamable.Server
          {
             // Change the amount of currency
             KeyValuePair<string, long> firstCurrency = inventoryView.currencies.FirstOrDefault();
-            Debug.Log("Returning: " + firstCurrency.Key + " with " + firstCurrency.Value);
-            return firstCurrency;
+            return firstCurrency.Key;
          }
 
-         Debug.Log("FAILING");
-         return new KeyValuePair<string, long>();
+         return "";
+      }
+      
+      /// <summary>
+      /// Arbitrarily choose the 'first' currency
+      /// as the active currency
+      /// </summary>
+      [ClientCallable]
+      public async Task<long> GetActiveCurrencyValue()
+      {
+         var inventoryView = await Services.Inventory.GetCurrent();
+         
+         // If the games content supports a currency ...
+         if (inventoryView.currencies.Count > 0)
+         {
+            // Change the amount of currency
+            KeyValuePair<string, long> firstCurrency = inventoryView.currencies.FirstOrDefault();
+            return firstCurrency.Value;
+         }
+
+         return 0;
       }
 
       [ClientCallable]
@@ -38,9 +56,8 @@ namespace Beamable.Server
         
          // Change the amount of currency
          bool isSuccess = false;
-         var activeCurrency = await GetActiveCurrency();
-         string currencyId = activeCurrency.Key;
-         long amountOld = activeCurrency.Value;
+         string currencyId = await GetActiveCurrencyId();
+         long amountOld = await GetActiveCurrencyValue();
          Debug.Log("about to add: " + currencyId + " and " + amountOld);
 
          if (!string.IsNullOrEmpty(currencyId))
@@ -64,9 +81,8 @@ namespace Beamable.Server
 
          // Change the amount of currency
          bool isSuccess = false;
-         var activeCurrency = await GetActiveCurrency();
-         string currencyId = activeCurrency.Key;
-         long amountOld = activeCurrency.Value;
+         string currencyId = await GetActiveCurrencyId();
+         long amountOld = await GetActiveCurrencyValue();
 
          if (!string.IsNullOrEmpty(currencyId))
          {

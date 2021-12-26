@@ -20,13 +20,23 @@ namespace Beamable.Server.Clients
     {
         
         /// <summary>
-        /// Call the GetActiveCurrency method on the MyCurrencyMicroservice microservice
-        /// <see cref="Beamable.Server.MyCurrencyMicroservice.GetActiveCurrency"/>
+        /// Call the GetActiveCurrencyId method on the MyCurrencyMicroservice microservice
+        /// <see cref="Beamable.Server.MyCurrencyMicroservice.GetActiveCurrencyId"/>
         /// </summary>
-        public Beamable.Common.Promise<System.Collections.Generic.KeyValuePair<string, long>> GetActiveCurrency()
+        public Beamable.Common.Promise<string> GetActiveCurrencyId()
         {
             string[] serializedFields = new string[0];
-            return this.Request<System.Collections.Generic.KeyValuePair<string, long>>("MyCurrencyMicroservice", "GetActiveCurrency", serializedFields);
+            return this.Request<string>("MyCurrencyMicroservice", "GetActiveCurrencyId", serializedFields);
+        }
+        
+        /// <summary>
+        /// Call the GetActiveCurrencyValue method on the MyCurrencyMicroservice microservice
+        /// <see cref="Beamable.Server.MyCurrencyMicroservice.GetActiveCurrencyValue"/>
+        /// </summary>
+        public Beamable.Common.Promise<long> GetActiveCurrencyValue()
+        {
+            string[] serializedFields = new string[0];
+            return this.Request<long>("MyCurrencyMicroservice", "GetActiveCurrencyValue", serializedFields);
         }
         
         /// <summary>

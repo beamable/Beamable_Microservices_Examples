@@ -20,23 +20,33 @@ namespace Beamable.Server.Clients
     {
         
         /// <summary>
-        /// Call the AddCurrency method on the MyCurrencyMicroservice microservice
-        /// <see cref="Beamable.Server.MyCurrencyMicroservice.AddCurrency"/>
+        /// Call the GetActiveCurrency method on the MyCurrencyMicroservice microservice
+        /// <see cref="Beamable.Server.MyCurrencyMicroservice.GetActiveCurrency"/>
         /// </summary>
-        public Beamable.Common.Promise<bool> AddCurrency()
+        public Beamable.Common.Promise<System.Collections.Generic.KeyValuePair<string, long>> GetActiveCurrency()
         {
             string[] serializedFields = new string[0];
-            return this.Request<bool>("MyCurrencyMicroservice", "AddCurrency", serializedFields);
+            return this.Request<System.Collections.Generic.KeyValuePair<string, long>>("MyCurrencyMicroservice", "GetActiveCurrency", serializedFields);
         }
         
         /// <summary>
-        /// Call the RemoveCurrency method on the MyCurrencyMicroservice microservice
-        /// <see cref="Beamable.Server.MyCurrencyMicroservice.RemoveCurrency"/>
+        /// Call the AddToActiveCurrency method on the MyCurrencyMicroservice microservice
+        /// <see cref="Beamable.Server.MyCurrencyMicroservice.AddToActiveCurrency"/>
         /// </summary>
-        public Beamable.Common.Promise<bool> RemoveCurrency()
+        public Beamable.Common.Promise<bool> AddToActiveCurrency()
         {
             string[] serializedFields = new string[0];
-            return this.Request<bool>("MyCurrencyMicroservice", "RemoveCurrency", serializedFields);
+            return this.Request<bool>("MyCurrencyMicroservice", "AddToActiveCurrency", serializedFields);
+        }
+        
+        /// <summary>
+        /// Call the RemoveFromActiveCurrency method on the MyCurrencyMicroservice microservice
+        /// <see cref="Beamable.Server.MyCurrencyMicroservice.RemoveFromActiveCurrency"/>
+        /// </summary>
+        public Beamable.Common.Promise<bool> RemoveFromActiveCurrency()
+        {
+            string[] serializedFields = new string[0];
+            return this.Request<bool>("MyCurrencyMicroservice", "RemoveFromActiveCurrency", serializedFields);
         }
     }
 }

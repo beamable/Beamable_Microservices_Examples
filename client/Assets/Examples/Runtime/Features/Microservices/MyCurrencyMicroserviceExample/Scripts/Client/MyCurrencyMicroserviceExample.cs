@@ -41,21 +41,23 @@ namespace Beamable.Examples.Features.Microservices.MyCurrencyMicroserviceExample
 
             // #1 - Call Microservice
             bool isSuccess1 = await _myCurrencyMicroserviceClient.AddToActiveCurrency();
-            Debug.Log ($"AddToActiveCurrency() isSuccess = {isSuccess1}");
             
             // Test
             var activeCurrencyDuring = await _myCurrencyMicroserviceClient.GetActiveCurrencyValue();
 
             // #2 - Call Microservice
             bool isSuccess2 = await _myCurrencyMicroserviceClient.RemoveFromActiveCurrency();
-            Debug.Log ($"RemoveFromActiveCurrency() isSuccess = {isSuccess2}");
             
             // Test
             var activeCurrencyAfter = await _myCurrencyMicroserviceClient.GetActiveCurrencyValue();
+            
+            // Logging
             Debug.Log ($"GetActiveCurrency() " +
                        $"before = {activeCurrencyBefore}, " +
                        $"during = {activeCurrencyDuring}, " +
                        $"after = {activeCurrencyAfter}.");
+            Debug.Log ($"AddToActiveCurrency() isSuccess = {isSuccess1}");
+            Debug.Log ($"RemoveFromActiveCurrency() isSuccess = {isSuccess2}");
         }
     }
 }

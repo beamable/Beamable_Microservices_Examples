@@ -40,8 +40,11 @@ namespace Beamable.Examples.Features.Microservices.MyCustomContentMicroserviceEx
             MyCustomData myCustomData = 
                 await _myCustomContentMicroserviceClient.LoadCustomData();
                 
+            // Hardcoded guess. Feel free to update via Content Manager
+            bool isSuccess = myCustomData.Attack == 22; 
+            
             // #2 - Result 
-            Debug.Log ($"LoadCustomData() myCustomData.Attack = {myCustomData.Attack}");
+            Debug.Log ($"LoadCustomData() myCustomData.Attack = {myCustomData.Attack}, Success={isSuccess}");
         }
     }
 }

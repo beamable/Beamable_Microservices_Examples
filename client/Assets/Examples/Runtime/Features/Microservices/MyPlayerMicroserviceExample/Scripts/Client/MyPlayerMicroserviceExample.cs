@@ -36,10 +36,11 @@ namespace Beamable.Examples.Features.Microservices.MyPlayerMicroserviceExample
             _myPlayerMicroserviceClient = new MyPlayerMicroserviceClient();
             
             // #1 - Call Microservice
-            int playerLevel = await _myPlayerMicroserviceClient.GetPlayerLevel();
+            int result = await _myPlayerMicroserviceClient.GetPlayerLevel();
+            bool isSuccess = result == 1; // Hardcoded guess. Feel free to update via Content Manager
                 
             // #2 - Result = 1
-            Debug.Log ($"GetPlayerLevel() Result = {playerLevel}");
+            Debug.Log ($"GetPlayerLevel() Result = {result}, success={isSuccess}");
         }
     }
 }

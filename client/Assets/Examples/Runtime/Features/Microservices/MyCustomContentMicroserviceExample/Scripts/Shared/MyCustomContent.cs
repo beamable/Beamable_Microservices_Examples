@@ -13,7 +13,7 @@ namespace Examples.MyCustomContentMicroserviceExample.Shared.MyCustomContent
     [Serializable]
     public class MyCustomData : System.Object
     {
-        public string Attack;
-        public string Damage;
+        public int Attack;
+        public int Damage;
     }
 }

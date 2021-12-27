@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: MyCustomContent01
   m_EditorClassIdentifier: 
   _tags: []
-  Attack: 
-  Damage: 
+  MyCustomData:
+    Attack: 22
+    Damage: 99

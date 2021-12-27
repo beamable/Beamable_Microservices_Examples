@@ -36,10 +36,11 @@ namespace Beamable.Examples.Features.Microservices.MyMathMicroserviceExample
             _myMathMicroserviceClient = new MyMathMicroserviceClient();
             
             // #1 - Call Microservice with (10, 5)
-            int myValues = await _myMathMicroserviceClient.AddMyValues(10, 5);
+            int result = await _myMathMicroserviceClient.AddMyValues(10, 5);
+            bool isSuccess = result == 15;
                 
             // #2 - Result = 15
-            Debug.Log ($"AddMyValues() Result = {myValues}");
+            Debug.Log ($"AddMyValues() Result = {result}, Success={isSuccess}");
         }
     }
 }

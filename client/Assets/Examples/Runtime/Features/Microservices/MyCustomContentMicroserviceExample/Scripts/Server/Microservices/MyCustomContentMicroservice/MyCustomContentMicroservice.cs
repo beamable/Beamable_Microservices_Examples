@@ -1,6 +1,5 @@
 using System.Threading.Tasks;
 using Examples.MyCustomContentMicroserviceExample.Shared.MyCustomContent;
-using UnityEngine;
 
 namespace Beamable.Server
 {

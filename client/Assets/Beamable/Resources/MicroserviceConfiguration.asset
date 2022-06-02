@@ -22,6 +22,8 @@ MonoBehaviour:
       Username: root
       Password: Password!
       SshPort: 11100
+    LastBuiltCheckSum: 
+    RobotId: 
   - ServiceName: TimedRewardService
     Enabled: 1
     TemplateId: small
@@ -31,6 +33,8 @@ MonoBehaviour:
       Username: root
       Password: Password!
       SshPort: 11101
+    LastBuiltCheckSum: 
+    RobotId: 
   - ServiceName: MyMathMicroservice
     Enabled: 1
     TemplateId: small
@@ -40,6 +44,8 @@ MonoBehaviour:
       Username: root
       Password: Password!
       SshPort: 11102
+    LastBuiltCheckSum: 
+    RobotId: 
   - ServiceName: MyPlayerMicroservice
     Enabled: 1
     TemplateId: small
@@ -49,7 +55,20 @@ MonoBehaviour:
       Username: root
       Password: Password!
       SshPort: 11103
+    LastBuiltCheckSum: 
+    RobotId: 
   - ServiceName: MyCurrencyMicroservice
+    Enabled: 1
+    TemplateId: small
+    CustomDockerFileStrings: 
+    IncludeDebugTools: 1
+    DebugData:
+      Username: root
+      Password: Password!
+      SshPort: 11104
+    LastBuiltCheckSum: 
+    RobotId: 
+  - ServiceName: MyCustomContentMicroservice
     Enabled: 1
     TemplateId: small
     CustomDockerFileStrings: 
@@ -57,7 +76,9 @@ MonoBehaviour:
     DebugData:
       Username: root
       Password: Password!
-      SshPort: 11104
+      SshPort: 11105
+    LastBuiltCheckSum: 
+    RobotId: 
   StorageObjects:
   - StorageName: NewStorageObject
     StorageType: mongov1
@@ -67,12 +88,182 @@ MonoBehaviour:
     LocalUIPort: 13100
     LocalInitUser: beamable
     LocalInitPass: beamable
+  ServiceCodeHandlesOnLastDomainReload:
+  - ServiceName: MyADBMicroservice
+    CodeClass: 1
+    CodeDirectory: Assets\Examples\Runtime\Features\Microservices\MyADBMicroserviceExample\Scripts\Server\Microservices\MyADBMicroservice
+    AsmDefInfo:
+      Name: Unity.Beamable.Runtime.UserMicroService.myadbmicroservice
+      References:
+      - Unity.Beamable.Runtime.Common
+      - Unity.Beamable.Server.Runtime
+      - Unity.Beamable.Server.Runtime.Shared
+      - Unity.Beamable
+      - Beamable.SmallerJSON
+      DllReferences:
+      - AWSSDK.Core.dll
+      - AWSSDK.DynamoDBv2.dll
+      Location: Assets/Examples/Runtime/Features/Microservices/MyADBMicroserviceExample/Scripts/Server/Microservices/MyADBMicroservice/Unity.Beamable.Runtime.UserMicroService.MyADBMicroservice.asmdef
+      IncludePlatforms: []
+      AutoReferenced: 0
+    Checksum: F43611ADEAF8B89F6F6FA978F610CD4C
+  - ServiceName: MyCurrencyMicroservice
+    CodeClass: 1
+    CodeDirectory: Assets\Examples\Runtime\Features\Microservices\MyCurrencyMicroserviceExample\Scripts\Server\Microservices\MyCurrencyMicroservice
+    AsmDefInfo:
+      Name: Unity.Beamable.Runtime.UserMicroService.mycurrencymicroservice
+      References:
+      - Unity.Beamable.Runtime.Common
+      - Unity.Beamable.Server.Runtime
+      - Unity.Beamable.Server.Runtime.Shared
+      - Unity.Beamable
+      - Beamable.SmallerJSON
+      DllReferences: []
+      Location: Assets/Examples/Runtime/Features/Microservices/MyCurrencyMicroserviceExample/Scripts/Server/Microservices/MyCurrencyMicroservice/Unity.Beamable.Runtime.UserMicroService.MyCurrencyMicroservice.asmdef
+      IncludePlatforms: []
+      AutoReferenced: 0
+    Checksum: 27C022A46C526136F07CC09CAB44CA50
+  - ServiceName: MyCustom.Shared
+    CodeClass: 3
+    CodeDirectory: Assets\Examples\Runtime\Features\Microservices\MyCustomContentMicroserviceExample\Scripts\Shared
+    AsmDefInfo:
+      Name: MyCustom.Shared
+      References:
+      - Unity.Beamable.Runtime.Common
+      - Unity.Beamable.Server.Runtime
+      - Beamable.SmallerJSON
+      - Unity.Addressables
+      DllReferences: []
+      Location: Assets/Examples/Runtime/Features/Microservices/MyCustomContentMicroserviceExample/Scripts/Shared/MyCustom.Shared.asmdef
+      IncludePlatforms: []
+      AutoReferenced: 0
+    Checksum: 59C5893E21A6147A74C7F78FC118CBEE
+  - ServiceName: MyCustomContentMicroservice
+    CodeClass: 1
+    CodeDirectory: Assets\Examples\Runtime\Features\Microservices\MyCustomContentMicroserviceExample\Scripts\Server\Microservices\MyCustomContentMicroservice
+    AsmDefInfo:
+      Name: MyCustom.Server
+      References:
+      - Unity.Beamable.Runtime.Common
+      - Unity.Beamable.Server.Runtime
+      - Unity.Beamable.Server.Runtime.Shared
+      - Unity.Beamable
+      - Beamable.SmallerJSON
+      - MyCustom.Shared
+      DllReferences: []
+      Location: Assets/Examples/Runtime/Features/Microservices/MyCustomContentMicroserviceExample/Scripts/Server/Microservices/MyCustomContentMicroservice/MyCustom.Server.asmdef
+      IncludePlatforms: []
+      AutoReferenced: 0
+    Checksum: 7F7B7E416F5C2BE1F6A192CCBD72CDA1
+  - ServiceName: MyMathMicroservice
+    CodeClass: 1
+    CodeDirectory: Assets\Examples\Runtime\Features\Microservices\MyMathMicroserviceExample\Scripts\Server\Microservices\MyMathMicroservice
+    AsmDefInfo:
+      Name: Unity.Beamable.Runtime.UserMicroService.mymathmicroservice
+      References:
+      - Unity.Beamable.Runtime.Common
+      - Unity.Beamable.Server.Runtime
+      - Unity.Beamable.Server.Runtime.Shared
+      - Unity.Beamable
+      - Beamable.SmallerJSON
+      DllReferences: []
+      Location: Assets/Examples/Runtime/Features/Microservices/MyMathMicroserviceExample/Scripts/Server/Microservices/MyMathMicroservice/Unity.Beamable.Runtime.UserMicroService.MyMathMicroservice.asmdef
+      IncludePlatforms: []
+      AutoReferenced: 0
+    Checksum: ED06B13228BF83B8E45F0CA8CA48FE61
+  - ServiceName: MyPlayerMicroservice
+    CodeClass: 1
+    CodeDirectory: Assets\Examples\Runtime\Features\Microservices\MyPlayerMicroserviceExample\Scripts\Server\Microservices\MyPlayerMicroservice
+    AsmDefInfo:
+      Name: Unity.Beamable.Runtime.UserMicroService.myplayermicroservice
+      References:
+      - Unity.Beamable.Runtime.Common
+      - Unity.Beamable.Server.Runtime
+      - Unity.Beamable.Server.Runtime.Shared
+      - Unity.Beamable
+      - Beamable.SmallerJSON
+      DllReferences: []
+      Location: Assets/Examples/Runtime/Features/Microservices/MyPlayerMicroserviceExample/Scripts/Server/Microservices/MyPlayerMicroservice/Unity.Beamable.Runtime.UserMicroService.MyPlayerMicroservice.asmdef
+      IncludePlatforms: []
+      AutoReferenced: 0
+    Checksum: 72FC9DBB16BB6B6E374A361A51D20DD8
+  LastBuiltDockerImagesCodeHandles:
+  - ServiceName: MyMathMicroservice
+    CodeClass: 1
+    CodeDirectory: Assets\Examples\Runtime\Features\Microservices\MyMathMicroserviceExample\Scripts\Server\Microservices\MyMathMicroservice
+    AsmDefInfo:
+      Name: Unity.Beamable.Runtime.UserMicroService.mymathmicroservice
+      References:
+      - Unity.Beamable.Runtime.Common
+      - Unity.Beamable.Server.Runtime
+      - Unity.Beamable.Server.Runtime.Shared
+      - Unity.Beamable
+      - Beamable.SmallerJSON
+      DllReferences: []
+      Location: Assets/Examples/Runtime/Features/Microservices/MyMathMicroserviceExample/Scripts/Server/Microservices/MyMathMicroservice/Unity.Beamable.Runtime.UserMicroService.MyMathMicroservice.asmdef
+      IncludePlatforms: []
+      AutoReferenced: 0
+    Checksum: ED06B13228BF83B8E45F0CA8CA48FE61
+  - ServiceName: MyPlayerMicroservice
+    CodeClass: 1
+    CodeDirectory: Assets\Examples\Runtime\Features\Microservices\MyPlayerMicroserviceExample\Scripts\Server\Microservices\MyPlayerMicroservice
+    AsmDefInfo:
+      Name: Unity.Beamable.Runtime.UserMicroService.myplayermicroservice
+      References:
+      - Unity.Beamable.Runtime.Common
+      - Unity.Beamable.Server.Runtime
+      - Unity.Beamable.Server.Runtime.Shared
+      - Unity.Beamable
+      - Beamable.SmallerJSON
+      DllReferences: []
+      Location: Assets/Examples/Runtime/Features/Microservices/MyPlayerMicroserviceExample/Scripts/Server/Microservices/MyPlayerMicroservice/Unity.Beamable.Runtime.UserMicroService.MyPlayerMicroservice.asmdef
+      IncludePlatforms: []
+      AutoReferenced: 0
+    Checksum: 72FC9DBB16BB6B6E374A361A51D20DD8
+  - ServiceName: MyCurrencyMicroservice
+    CodeClass: 1
+    CodeDirectory: Assets\Examples\Runtime\Features\Microservices\MyCurrencyMicroserviceExample\Scripts\Server\Microservices\MyCurrencyMicroservice
+    AsmDefInfo:
+      Name: Unity.Beamable.Runtime.UserMicroService.mycurrencymicroservice
+      References:
+      - Unity.Beamable.Runtime.Common
+      - Unity.Beamable.Server.Runtime
+      - Unity.Beamable.Server.Runtime.Shared
+      - Unity.Beamable
+      - Beamable.SmallerJSON
+      DllReferences: []
+      Location: Assets/Examples/Runtime/Features/Microservices/MyCurrencyMicroserviceExample/Scripts/Server/Microservices/MyCurrencyMicroservice/Unity.Beamable.Runtime.UserMicroService.MyCurrencyMicroservice.asmdef
+      IncludePlatforms: []
+      AutoReferenced: 0
+    Checksum: 27C022A46C526136F07CC09CAB44CA50
+  ServiceDependencyChecksums:
+  - ServiceName: MyMathMicroservice
+    Checksum: 522687a0259ec4301502975e682779c6
+  - ServiceName: MyPlayerMicroservice
+    Checksum: 259fa3fc23cfc19a6c922ea19e817570
+  - ServiceName: MyCurrencyMicroservice
+    Checksum: 56fcb4b01a4928bd51454a2e0bcba109
+  - ServiceName: MyCustomContentMicroservice
+    Checksum: 0efe742a5ac47bf161ee11cc52755333
+  - ServiceName: MyADBMicroservice
+    Checksum: e3c35781548859132aeb0769c3a5f0c9
   CustomContainerPrefix: 
   AutoReferenceContent: 1
+  AutoBuildCommonAssembly: 1
   ColorLogs: 0
-  EnableDockerBuildkit: 0
-  EnableStoragePreview: 0
-  DockerCommand: docker
+  DisableDockerBuildkit: 0
+  DockerDesktopCheckInMicroservicesWindow: 1
+  EnableHotModuleReload: 1
+  EnableAutoPrune: 1
+  RiderDebugTools:
+    HasValue: 0
+    Value:
+      RiderVersion: 2021.3.3
+      RiderToolsDownloadUrl: https://download.jetbrains.com/resharper/dotUltimate.2021.3.2/JetBrains.Rider.RemoteDebuggerUploads.linux-x64.2021.3.2.zip
+  WindowsDockerCommand: docker
+  UnixDockerCommand: /usr/local/bin/docker
+  WindowsDockerDesktopPath: C:\Program Files\Docker\Docker\Docker Desktop.exe
+  UnixDockerDesktopPath: /Applications/Docker.app/
   ForwardContainerLogsToUnityConsole: 0
   LogProcessLabelColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   LogStandardOutColor: {r: 0, g: 0, b: 1, a: 1}

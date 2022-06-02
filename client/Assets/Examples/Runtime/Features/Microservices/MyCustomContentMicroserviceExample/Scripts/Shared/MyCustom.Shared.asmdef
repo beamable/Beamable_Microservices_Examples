@@ -3,7 +3,6 @@
     "rootNamespace": "",
     "references": [
         "Unity.Beamable.Runtime.Common",
-        "Unity.Beamable.Server.Runtime",
         "Beamable.SmallerJSON",
         "Unity.Addressables"
     ],
@@ -12,7 +11,7 @@
     "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],
-    "autoReferenced": true,
+    "autoReferenced": false,
     "defineConstraints": [],
     "versionDefines": [],
     "noEngineReferences": false

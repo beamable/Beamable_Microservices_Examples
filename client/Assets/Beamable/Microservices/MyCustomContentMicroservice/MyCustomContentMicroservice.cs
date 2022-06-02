@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
-using Examples.MyCustomContentMicroserviceExample.Shared.MyCustomContent;
+using Beamable.Server;
 
-namespace Beamable.Server
+namespace Beamable.Microservices
 {
    [Microservice("MyCustomContentMicroservice")]
    public class MyCustomContentMicroservice : Microservice

@@ -14,7 +14,7 @@ namespace Beamable.Server.Clients
     using Beamable.Server;
     
     
-    /// <summary> A generated client for <see cref="Beamable.Server.MyCustomContentMicroservice"/> </summary
+    /// <summary> A generated client for <see cref="Beamable.Microservices.MyCustomContentMicroservice"/> </summary
     public sealed class MyCustomContentMicroserviceClient : MicroserviceClient
     {
         
@@ -25,12 +25,12 @@ namespace Beamable.Server.Clients
         
         /// <summary>
         /// Call the LoadCustomData method on the MyCustomContentMicroservice microservice
-        /// <see cref="Beamable.Server.MyCustomContentMicroservice.LoadCustomData"/>
+        /// <see cref="Beamable.Microservices.MyCustomContentMicroservice.LoadCustomData"/>
         /// </summary>
-        public Beamable.Common.Promise<Examples.MyCustomContentMicroserviceExample.Shared.MyCustomContent.MyCustomData> LoadCustomData()
+        public Beamable.Common.Promise<Beamable.Microservices.MyCustomData> LoadCustomData()
         {
             string[] serializedFields = new string[0];
-            return this.Request<Examples.MyCustomContentMicroserviceExample.Shared.MyCustomContent.MyCustomData>("MyCustomContentMicroservice", "LoadCustomData", serializedFields);
+            return this.Request<Beamable.Microservices.MyCustomData>("MyCustomContentMicroservice", "LoadCustomData", serializedFields);
         }
     }
     

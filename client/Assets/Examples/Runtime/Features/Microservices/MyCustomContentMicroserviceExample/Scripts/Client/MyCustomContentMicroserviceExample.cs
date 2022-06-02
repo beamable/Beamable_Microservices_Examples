@@ -1,5 +1,5 @@
-﻿using Beamable.Server.Clients;
-using Examples.MyCustomContentMicroserviceExample.Shared.MyCustomContent;
+﻿using Beamable.Microservices;
+using Beamable.Server.Clients;
 using UnityEngine;
 
 namespace Beamable.Examples.Features.Microservices.MyCustomContentMicroserviceExample
@@ -38,7 +38,7 @@ namespace Beamable.Examples.Features.Microservices.MyCustomContentMicroserviceEx
             _myCustomContentMicroserviceClient = new MyCustomContentMicroserviceClient();
             
             // #1 - Call Microservice
-            MyCustomData myCustomData = 
+            var myCustomData = 
                 await _myCustomContentMicroserviceClient.LoadCustomData();
                 
             // Hardcoded guess. Feel free to update via Content Manager

@@ -1,7 +1,7 @@
 ﻿using System;
 using Beamable.Common.Content;
 
-namespace Examples.MyCustomContentMicroserviceExample.Shared.MyCustomContent
+namespace Beamable.Microservices
 {
     [ContentType("my_custom_content")]
     
@@ -11,7 +11,7 @@ namespace Examples.MyCustomContentMicroserviceExample.Shared.MyCustomContent
     }
     
     [Serializable]
-    public class MyCustomData : System.Object
+    public class MyCustomData 
     {
         public int Attack;
         public int Damage;

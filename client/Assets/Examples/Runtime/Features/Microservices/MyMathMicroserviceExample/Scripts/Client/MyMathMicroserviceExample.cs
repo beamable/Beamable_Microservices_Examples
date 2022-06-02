@@ -29,9 +29,10 @@ namespace Beamable.Examples.Features.Microservices.MyMathMicroserviceExample
         //  Methods  --------------------------------------
         private async void SetupBeamable()
         {
-            var beamableAPI = await Beamable.API.Instance;
+            var beamContext = BeamContext.Default;
+            await beamContext.OnReady;
 
-            Debug.Log($"beamableAPI.User.id = {beamableAPI.User.id}");
+            Debug.Log($"beamContext.PlayerId = {beamContext.PlayerId}");
             
             _myMathMicroserviceClient = new MyMathMicroserviceClient();
             
